@@ -8,6 +8,8 @@
             wayland = true;
         };
     };
+    environment.systemPackages =  with pkgs; [ waybar eww swww dunst ];
+
 
     hardware = {
         opengl.enable = true;
