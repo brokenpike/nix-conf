@@ -7,6 +7,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # helix editor, use the master branch
     helix.url = "github:helix-editor/helix/master";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/master";
