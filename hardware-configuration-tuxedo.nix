@@ -1,1 +1,0 @@
-/etc/nixos.bak/hardware-configuration.nix
