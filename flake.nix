@@ -17,9 +17,13 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tuxedo-nixos = {
+      url = "github:blitz/tuxedo-nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs,home-manager, ... }: {
+  outputs = inputs@{ nixpkgs,home-manager, tuxedo-nixos, ... }: {
     # Please replace my-nixos with your hostname
     nixosConfigurations.tuxedo = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -39,9 +43,12 @@
             # TODO replace ryan with your own username
             home-manager.users.scott = import ./home.nix;
             home-manager.users.caius = import ./home-caius.nix;
+          }
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-          }
+            tuxedo-nixos.nixosModules.default
+         # { hardware.tuxedo-control-center.enable = true; }
+
 
         #{ _module.args = { inherit inputs; };}
       ];

@@ -73,6 +73,8 @@ services.xrdp.openFirewall = true;
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+    #hardware.tuxedo-control-center.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
